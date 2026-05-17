@@ -4,7 +4,7 @@ class InventoryManager:
 
     def add_item(self, item_id, name, price, quantity):
         if item_id in self.inventory:
-            self.inventory[item_id]['quantity'] = quantity
+            self.inventory[item_id]['quantity'] += quantity
             self.inventory[item_id]['price'] = price
         else:
             self.inventory[item_id] = {
