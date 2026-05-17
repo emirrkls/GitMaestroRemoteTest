@@ -27,5 +27,5 @@ class InventoryManager:
     def get_total_value(self):
         total = 0.0
         for item in self.inventory.values():
-            total += item['price']
+            total += item['price'] * item['quantity']
         return total
