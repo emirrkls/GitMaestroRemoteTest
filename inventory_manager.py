@@ -22,7 +22,7 @@ class InventoryManager:
     def apply_discount(self, item_id, discount_percentage):
         if item_id in self.inventory:
             item = self.inventory[item_id]
-            item['price'] = item['price'] - (item['price'] * discount_percentage)
+            item['price'] = item['price'] * (1 - discount_percentage / 100)
 
     def get_total_value(self):
         total = 0.0
