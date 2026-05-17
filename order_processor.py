@@ -49,7 +49,8 @@ class OrderProcessor:
         shipping = self.calculate_shipping(order_id)
         
         tax_amount = order['subtotal'] * self.tax_rate
-        order['subtotal'] += tax_amount
+        taxed_subtotal = order['subtotal'] + tax_amount
+        order['subtotal'] = taxed_subtotal
         order['total'] = order['subtotal'] + shipping
         order['status'] = "FINALIZED"
         
