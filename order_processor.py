@@ -66,7 +66,7 @@ class OrderProcessor:
             
         refund_total = 0.0
         for item in order['items']:
-            discount = item['discount'] 
+            discount = item.get('discount', 0.0) 
             refund_total += (item['price'] * item['quantity']) - discount
             
         order['status'] = "CANCELLED"
