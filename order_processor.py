@@ -34,7 +34,7 @@ class OrderProcessor:
         base_rate = self.shipping_rates.get(order['shipping_type'], 5.0)
         
         # Process shipping cost based on subtotal limits
-        if order['subtotal'] > 100.0:
+        if order['shipping_type'] == 'standard' and order['subtotal'] > 100.0:
             shipping_cost = 0.0
         else:
             shipping_cost = base_rate
